@@ -91,7 +91,7 @@ setAuthModalOpen(true);
               </button>
 
               <a
-                href="https://github.com/your-repo"
+                href="https://github.com/lakshayxdev/Synapse"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center w-full sm:w-auto gap-2 px-6 py-3 rounded-xl border-2 border-zinc-700 hover:border-zinc-500 hover:bg-zinc-900/50 transition-all duration-300"
