@@ -1,6 +1,6 @@
-# 🧠 Synapse - AI Powered Notes Application
+# 🧠 Synapse - AI Powered Notes Management Platform
 
-An AI-powered full-stack notes application built with the MERN stack that helps users create, organize, and summarize notes effortlessly. Synapse combines secure authentication, intelligent note management, and AI-generated summaries into a modern, responsive interface.
+An AI-Powered Full Stack Notes Management Platform built with the MERN stack that helps users create, organize, and summarize notes effortlessly. Synapse combines secure authentication, intelligent note management, and AI-generated summaries into a modern, responsive interface.
 
 ---
 
