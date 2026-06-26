@@ -115,20 +115,20 @@ console.log("sorted:", sortedNotes.length);
   </div>
 ) : (
   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:px-5">
-    {/* {sortedNotes.map((note) => (
+    {sortedNotes.map((note) => (
       <NoteCard
         key={note._id}
         note={note}
       />
-    ))} */}
-    {sortedNotes.map((note) => (
+    ))}
+    {/* {sortedNotes.map((note) => (
   <div
     key={note._id}
     className="bg-red-500 text-white p-4 rounded-lg"
   >
     {note.title}
   </div>
-))}
+))} */}
   </div>
 )}
 
