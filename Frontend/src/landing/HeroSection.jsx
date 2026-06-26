@@ -27,7 +27,7 @@ setAuthModalOpen(true);
   }
 
   return (
-    <section className="min-h-[90vh] flex items-center px-8 md:px-6 py-20  overflow-hidden">
+    <section className="min-h-[90vh] flex items-center px-4 sm:px-6 md:px-8 pt-16 pb-20 md:pt-24 md:pb-20  overflow-hidden">
       <div className="max-w-7xl mx-auto w-full ">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
 
@@ -52,7 +52,7 @@ setAuthModalOpen(true);
                       AI-Powered Note Taking
                     </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight  bg-linear-to-r
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight  bg-linear-to-r
                 from-violet-400
                 to-indigo-400
                 bg-clip-text
