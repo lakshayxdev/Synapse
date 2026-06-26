@@ -16,9 +16,9 @@ const MainWorkspace = () => {
      <StatsSection />
    </FadeUp>
 
-   <FadeUp>
+  
      <NotesGrid />
-   </FadeUp>
+  
    </div>
   
   
