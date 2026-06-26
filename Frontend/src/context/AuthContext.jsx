@@ -4,15 +4,28 @@ import toast from "react-hot-toast";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  // const [user, setUser] = useState(null);
+
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem("user");
+
+  //   if (storedUser) {
+  //     setUser(JSON.parse(storedUser));
+  //   }
+  // }, []);
+
   const [user, setUser] = useState(null);
+const [authLoading, setAuthLoading] = useState(true);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+useEffect(() => {
+  const storedUser = localStorage.getItem("user");
 
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+  if (storedUser) {
+    setUser(JSON.parse(storedUser));
+  }
+
+  setAuthLoading(false);
+}, []);
 
   const login = (userData, token) => {
     localStorage.setItem("token", token);
@@ -34,14 +47,24 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
+    // <AuthContext.Provider
+    //   value={{
+    //     user,
+    //     login,
+    //     logout,
+    //     isAuthenticated: !!user,
+    //   }}
+    // >
+
     <AuthContext.Provider
-      value={{
-        user,
-        login,
-        logout,
-        isAuthenticated: !!user,
-      }}
-    >
+  value={{
+    user,
+    login,
+    logout,
+    authLoading,
+    isAuthenticated: !!user,
+  }}
+>
       {children}
     </AuthContext.Provider>
   );

@@ -16,6 +16,9 @@ const NotePlace = () => {
   const fetchNotes = async () => {
     try {
       const res = await api.get("/notes");
+       console.log("Full Response:", res.data);
+    console.log("Notes:", res.data.notes);
+    console.log("Notes length:", res.data.notes?.length);
        console.log(res.data);
       setNotes(res.data.notes);
     } catch (error) {
@@ -25,12 +28,18 @@ const NotePlace = () => {
     }
   };
 
-  useEffect(() => {
-  if (user) {
-    fetchNotes();
-  } else {
-    setNotes([]);
-  }
+//   useEffect(() => {
+//   if (user) {
+//     fetchNotes();
+//   } else {
+//     setNotes([]);
+//   }
+// }, [user]);
+
+useEffect(() => {
+  if (!user) return;
+
+  fetchNotes();
 }, [user]);
 
   const filteredNotes = notes.filter((note) => {
@@ -54,6 +63,20 @@ const sortedNotes = [...searchedNotes].sort((a, b) => {
 
   return 0;
 });
+console.log("notes:", notes.length);
+console.log("filtered:", filteredNotes.length);
+console.log("searched:", searchedNotes.length);
+console.log("sorted:", sortedNotes.length);
+
+   if (loading) {
+    return (
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {[...Array(8)].map((_, i) => (
+          <NoteCardSkeleton key={i} />
+        ))}
+      </div>
+    );
+  }
 
   if (notes.length === 0) {
     return (
@@ -73,15 +96,6 @@ const sortedNotes = [...searchedNotes].sort((a, b) => {
     );
   }
 
-   if (loading) {
-    return (
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {[...Array(8)].map((_, i) => (
-          <NoteCardSkeleton key={i} />
-        ))}
-      </div>
-    );
-  }
 
   return (
     <>
@@ -101,12 +115,20 @@ const sortedNotes = [...searchedNotes].sort((a, b) => {
   </div>
 ) : (
   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:px-5">
-    {sortedNotes.map((note) => (
+    {/* {sortedNotes.map((note) => (
       <NoteCard
         key={note._id}
         note={note}
       />
-    ))}
+    ))} */}
+    {sortedNotes.map((note) => (
+  <div
+    key={note._id}
+    className="bg-red-500 text-white p-4 rounded-lg"
+  >
+    {note.title}
+  </div>
+))}
   </div>
 )}
 

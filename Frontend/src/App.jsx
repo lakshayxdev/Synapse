@@ -37,7 +37,8 @@ import { useState,useEffect } from "react";
 function App() {
    
 
-  const {user}=useAuth();
+  // const {user}=useAuth();
+  const { user, authLoading } = useAuth();
 
  const [loading, setLoading] = useState(
   !sessionStorage.getItem("preloaderShown")
@@ -57,6 +58,9 @@ useEffect(() => {
 
 if (loading) {
   return <PreLoader />;
+}
+if (authLoading) {
+  return <div className="min-h-screen bg-black" />;
 }
  
   return (
