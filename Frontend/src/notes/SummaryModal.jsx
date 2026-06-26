@@ -57,15 +57,17 @@ return ( <div
  > <div
      className="
        relative
-       w-full
-       max-w-3xl
-       rounded-3xl
-       mt-5 mb-5
-       border border-white/10
-       bg-zinc-950/95
-       backdrop-blur-xl
-       shadow-[0_0_80px_rgba(139,92,246,0.08)]
-       overflow-hidden
+    w-full
+    max-w-3xl
+    max-h-[85vh]
+    rounded-3xl
+    border border-white/10
+    bg-zinc-950/95
+    backdrop-blur-xl
+    shadow-[0_0_80px_rgba(139,92,246,0.08)]
+    overflow-hidden
+    flex
+    flex-col
      "
    >
  <div
@@ -83,7 +85,7 @@ return ( <div
      />
 
 
-    <div className="p-8">
+<div className="p-8 flex flex-col flex-1 overflow-hidden">
 
       <div className="flex items-center justify-between mb-8">
 
@@ -144,7 +146,7 @@ return ( <div
 
       </div>
 
-      <div className="max-h-[60vh] overflow-y-auto pr-2">
+     <div className="flex-1 overflow-y-auto pr-2">
 
         {loading ? (
 
